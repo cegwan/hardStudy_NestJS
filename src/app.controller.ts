@@ -12,6 +12,6 @@ export class AppController {
 
   @Get('/say')
   say(): string {
-    return 'But I love you so';
+    return 'But I love u so';
   }
 }
