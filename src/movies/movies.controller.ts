@@ -22,8 +22,7 @@ export class MoviesController {
 
   @Post()
   create(@Body() movieData) {
-    console.log(movieData);
-    return `This will create a movie`;
+    return movieData;
   }
 
   @Delete('/:id')
@@ -32,7 +31,10 @@ export class MoviesController {
   }
 
   @Patch('/:id')
-  path(@Param('id') movieId: string) {
-    return `This will update a movie with the id: ${movieId}`;
+  path(@Param('id') movieId: string, @Body() updataData) {
+    return {
+      updatedMovie: movieId,
+      ...updataData,
+    };
   }
 }
